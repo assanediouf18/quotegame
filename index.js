@@ -11,6 +11,16 @@ const db = require("./db")
 
 const quoteNb = 3522
 
+async function getRandomMovies() {
+    movies = []
+    for(i = 0; i < 4; i++) {
+        id = quotegame.randomId(quoteNb)
+        data = await db.model.Quote.findByPk(id)
+        movies.push(data.movie)
+    }
+    return movies
+}
+
 app.use("/static", express.static(path.join(__dirname, '/static')))
 
 app.get('/', (req, res) => {
@@ -21,6 +31,14 @@ app.get('/random', (req, res) => {
     id = quotegame.randomId(quoteNb)
     db.model.Quote.findByPk(id).then((data) => {
         res.json(data)
+    })
+})
+
+app.get('/random_movies', (req, res) => {
+    getRandomMovies().then((data) => {
+        res.json({
+            movies: data
+        })
     })
 })
 

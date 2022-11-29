@@ -5,8 +5,8 @@
     - [X] ~~Scrapper les données~~
 
 - [X] Ajouter la logique du jeu
-    - [X] Sélectionner une citation aléatoirement
-    - [ ] Sélectionner des noms de films aléatoirement
+    - [X] ~~Sélectionner une citation aléatoirement~~
+    - [X] ~~Sélectionner des noms de films aléatoirement~~
     - [ ] Terminer un essai
     - [ ] Implémenter un système de score
 
