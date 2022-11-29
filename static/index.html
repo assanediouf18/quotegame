@@ -10,32 +10,6 @@
         <blockquote id="random_quote"></blockquote>
         <ul id="proposals"></ul>
 
-        <script>
-            function setNewProposition(goodMovie) {
-                fetch('/random_movies?movie=' + goodMovie)
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log(data.movies)
-                        movies = data.movies
-                        ul = document.querySelector("#proposals")
-                        for(movie in movies) {
-                            li = document.createElement("li")
-                            li.textContent = movies[movie]
-                            ul.appendChild(li)
-                        }
-                    })
-            }
-
-            function getNewQuote() {
-                fetch('/random')
-                    .then((response) => response.json())
-                    .then((data) => {
-                        document.querySelector('#random_quote').textContent = data.quote
-                        setNewProposition(data.movie)
-                    })
-            }
-
-            getNewQuote()
-        </script>
+        <script src="game.js"></script>
     </body>
 </html>

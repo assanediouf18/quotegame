@@ -7,7 +7,7 @@
 - [X] Ajouter la logique du jeu
     - [X] ~~Sélectionner une citation aléatoirement~~
     - [X] ~~Sélectionner des noms de films aléatoirement~~
-    - [ ] Terminer un essai
+    - [X] Terminer un essai
     - [ ] Implémenter un système de score
 
 - [ ] Terminer les fichiers statiques

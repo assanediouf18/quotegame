@@ -50,6 +50,21 @@ app.get('/random_movies', (req, res) => {
     })
 })
 
+app.get('/check_answer', (req, res) => {
+    proposal = req.query.proposal
+    quote = req.query.quote
+    db.model.Quote.findOne({
+        where: {
+            quote: quote,
+        }
+    }).then((data) => {
+        res.json({
+            correct: (data.movie === proposal),
+            answer: data.movie
+        })
+    })
+})
+
 // app.get('/roll/:unfrozen', (req, res) => {
 //     var unfrozenDices = parseInt(req.params.unfrozen);
 //     var dices = discus.roll(unfrozenDices);
