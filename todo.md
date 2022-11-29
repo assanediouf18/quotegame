@@ -4,8 +4,8 @@
     - [X] ~~Mettre en place le modèle Quote~~
     - [X] ~~Scrapper les données~~
 
-- [ ] Ajouter la logique du jeu
-    - [ ] Sélectionner une citation aléatoirement
+- [X] Ajouter la logique du jeu
+    - [X] Sélectionner une citation aléatoirement
     - [ ] Sélectionner des noms de films aléatoirement
     - [ ] Terminer un essai
     - [ ] Implémenter un système de score

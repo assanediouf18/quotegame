@@ -7,11 +7,21 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 
 const quotegame = require('./back/quotegame');
+const db = require("./db")
+
+const quoteNb = 3522
 
 app.use("/static", express.static(path.join(__dirname, '/static')))
 
 app.get('/', (req, res) => {
     res.redirect(301, '/static/index.html')
+})
+
+app.get('/random', (req, res) => {
+    id = quotegame.randomId(quoteNb)
+    db.model.Quote.findByPk(id).then((data) => {
+        res.json(data)
+    })
 })
 
 // app.get('/roll/:unfrozen', (req, res) => {
