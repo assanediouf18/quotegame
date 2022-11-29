@@ -35,9 +35,17 @@ app.get('/random', (req, res) => {
 })
 
 app.get('/random_movies', (req, res) => {
+    goodName = req.query.movie || "Film mystère"
     getRandomMovies().then((data) => {
+        myMovies = []
+        for(id in data)
+        {
+            myMovies.push(data[id])
+        }
+        myMovies.push(goodName)
+        myMovies = quotegame.shuffle(myMovies)
         res.json({
-            movies: data
+            movies: myMovies
         })
     })
 })

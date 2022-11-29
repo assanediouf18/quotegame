@@ -12,12 +12,11 @@
 
         <script>
             function setNewProposition(goodMovie) {
-                fetch('/random_movies')
+                fetch('/random_movies?movie=' + goodMovie)
                     .then((response) => response.json())
                     .then((data) => {
                         console.log(data.movies)
                         movies = data.movies
-                        movies.push(goodMovie)
                         ul = document.querySelector("#proposals")
                         for(movie in movies) {
                             li = document.createElement("li")
