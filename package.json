@@ -1,0 +1,17 @@
+{
+  "name": "quotegame",
+  "version": "1.0.0",
+  "description": "A simple game for a school project",
+  "main": "index.js",
+  "scripts": {
+    "init": "node db.init.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Assane Diouf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sequelize": "^6.25.8",
+    "sqlite3": "^5.1.2"
+  }
+}
