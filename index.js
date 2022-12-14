@@ -30,7 +30,11 @@ app.get('/', (req, res) => {
 app.get('/random', (req, res) => {
     id = quotegame.randomId(quoteNb)
     db.model.Quote.findByPk(id).then((data) => {
-        res.json(data)
+        res.json({
+            quote: data.quote,
+            movie: data.movie,
+            id: id
+        })
     })
 })
 
@@ -52,12 +56,8 @@ app.get('/random_movies', (req, res) => {
 
 app.get('/check_answer', (req, res) => {
     proposal = req.query.proposal
-    quote = req.query.quote
-    db.model.Quote.findOne({
-        where: {
-            quote: quote,
-        }
-    }).then((data) => {
+    quoteID = parseInt(req.query.quote)
+    db.model.Quote.findByPk(quoteID).then((data) => {
         res.json({
             correct: (data.movie === proposal),
             answer: data.movie
