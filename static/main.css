@@ -1,3 +1,33 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around; */
+}
+
+main {
+    height: 100vh;
+    /* padding: 10%; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-content: space-around; */
+}
+
 blockquote {
     white-space: pre-line;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
 }
