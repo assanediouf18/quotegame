@@ -57,10 +57,13 @@ app.get('/random_movies', (req, res) => {
 app.get('/check_answer', (req, res) => {
     proposal = req.query.proposal
     quoteID = parseInt(req.query.quote)
+    score = parseInt(req.query.score)
     db.model.Quote.findByPk(quoteID).then((data) => {
+        isGoodAnswer = (data.movie === proposal)
         res.json({
-            correct: (data.movie === proposal),
-            answer: data.movie
+            correct: isGoodAnswer,
+            answer: data.movie,
+            newScore: score + (isGoodAnswer ? 10 : 0),
         })
     })
 })

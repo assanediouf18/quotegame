@@ -1,9 +1,13 @@
 function onProposalClick(proposal) {
     quote = sessionStorage.getItem("quote")
-    fetch('/check_answer?proposal=' + proposal + "&quote=" + quote)
+    score = sessionStorage.getItem("score") || "0"
+    fetch('/check_answer?proposal=' + proposal + "&quote=" + quote + "&score=" + score)
         .then((response) => response.json())
         .then((data) => {
-            message = (data.correct) ? "Bravo !" : "Et non c'était '" + data.answer + "'"
+            score = data.newScore
+            storeItem("score", score)
+            message = (data.correct) ? "Bravo ! Ton score passe à " : "Et non c'était '" + data.answer + "', ton score reste à "
+            message += score
             document.querySelector("#random_quote").innerHTML = message
             document.querySelector("#proposals").innerHTML = "<li onclick=\"getNewQuote()\">Suivant</li>"
         })
@@ -34,8 +38,8 @@ function getNewQuote() {
             document.querySelector('#random_quote').textContent = data.quote
             storeItem("quote", data.id)
             setNewProposition(data.movie)
+            document.querySelector("#proposals").innerHTML = ""
         })
-        document.querySelector("#proposals").innerHTML = ""
 }
 
 function storeItem(key, value) {
@@ -43,3 +47,4 @@ function storeItem(key, value) {
 }
 
 getNewQuote()
+storeItem("score", 0)
