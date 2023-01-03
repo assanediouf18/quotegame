@@ -31,3 +31,7 @@ ul {
     justify-content: space-around;
     list-style: none;
 }
+
+li {
+    cursor: pointer;
+}
