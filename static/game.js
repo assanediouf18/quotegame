@@ -1,15 +1,20 @@
 function onProposalClick(proposal) {
     quote = sessionStorage.getItem("quote")
     score = sessionStorage.getItem("score") || "0"
-    fetch('/check_answer?proposal=' + proposal + "&quote=" + quote + "&score=" + score)
+    quoteNb = sessionStorage.getItem("quoteNb") || "1"
+    fetch('/check_answer?proposal=' + proposal + "&quote=" + quote + "&score=" + score + "&quoteNb=" + quoteNb)
         .then((response) => response.json())
         .then((data) => {
             score = data.newScore
             storeItem("score", score)
+            quoteNb = parseInt(data.quoteNb)
+            storeItem("quoteNb", quoteNb)
             message = (data.correct) ? "Bravo ! Ton score passe à " : "Et non c'était '" + data.answer + "', ton score reste à "
-            message += score
+            message += score + ". (il reste " + (10 - quoteNb).toString() + " tour(s))"
             document.querySelector("#random_quote").innerHTML = message
-            document.querySelector("#proposals").innerHTML = "<li onclick=\"getNewQuote()\">Suivant</li>"
+            goToNextMessage = "<li onclick=\"getNewQuote()\">Suivant</li>"
+            endMessage = "<a href=\"end.html\">Fin</a>"
+            document.querySelector("#proposals").innerHTML = (quoteNb == 10) ? endMessage : goToNextMessage
         })
 }
 
@@ -48,3 +53,4 @@ function storeItem(key, value) {
 
 getNewQuote()
 storeItem("score", 0)
+storeItem("quoteNb", 0)

@@ -10,11 +10,11 @@
     - [X] ~~Terminer un essai~~
     - [X] ~~Implémenter un système de score~~
     - [] Pouvoir démarrer une partie
-    - [] Arrêter une partie
+    - [X] ~~Arrêter une partie~~
 
-- [ ] Terminer les fichiers statiques
-    - [ ] Ajouter une page d'accueil
-    - [ ] Ajouter une page de félicitation
+- [X] ~~Terminer les fichiers statiques~~
+    - [X] ~~Ajouter une page d'accueil~~
+    - [X] ~~Ajouter une page de félicitation~~
 
 - [ ] Mode multijoueur
     - [ ] Ajouter un modèle User

@@ -58,38 +58,17 @@ app.get('/check_answer', (req, res) => {
     proposal = req.query.proposal
     quoteID = parseInt(req.query.quote)
     score = parseInt(req.query.score)
+    turnNb = parseInt(req.query.quoteNb)
     db.model.Quote.findByPk(quoteID).then((data) => {
         isGoodAnswer = (data.movie === proposal)
         res.json({
             correct: isGoodAnswer,
             answer: data.movie,
             newScore: score + (isGoodAnswer ? 10 : 0),
+            quoteNb: 1 + turnNb
         })
     })
 })
-
-// app.get('/roll/:unfrozen', (req, res) => {
-//     var unfrozenDices = parseInt(req.params.unfrozen);
-//     var dices = discus.roll(unfrozenDices);
-//     res.json({
-//         values: dices.dices,
-//         endAttempt: dices.endAttempt,
-//         disableBtn: dices.dices != [],
-//     });
-// })
-
-// app.get('/freeze', (req, res) => {
-//     var id = req.query.id;
-//     var mClass = req.query.class;
-//     var value = req.query.value;
-//     var respObject = discus.freeze({id: id, value: value, class: mClass});
-//     res.json(respObject);
-// })
-
-// app.get('/finish', (req, res) => {
-//     var respObj = discus.finish({attemptNb: req.query.attemptNb, values: req.query.values});
-//     res.json(respObj);
-// })
 
 app.use(function (req, res) {
     console.log("et c'est le 404 : " + req.url);
