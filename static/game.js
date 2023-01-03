@@ -18,7 +18,6 @@ function onProposalClick(proposal) {
             goToNextMessage = "<li onclick=\"getNewQuote()\">Suivant</li>"
             endMessage = "<a href=\"end.html\">Fin</a>"
             document.querySelector("#proposals").innerHTML = (quoteNb == 10) ? endMessage : goToNextMessage
-            proposed = false
         })
 }
 
@@ -41,6 +40,7 @@ function setNewProposition(goodMovie) {
 }
 
 function getNewQuote() {
+    proposed = false
     fetch('/random')
         .then((response) => response.json())
         .then((data) => {
@@ -61,7 +61,9 @@ function typeWriter(txt, id, i = 0) {
     if (i < txt.length) {
       document.getElementById(id).innerHTML += txt.charAt(i);
       i++;
-      if(!proposed) setTimeout(() => {typeWriter(txt, id, i)}, speed);
+      if(!proposed) {
+        setTimeout(() => {typeWriter(txt, id, i)}, speed)
+      }
     }
 }
 
