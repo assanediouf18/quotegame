@@ -9,12 +9,19 @@
     - [X] ~~Sélectionner des noms de films aléatoirement~~
     - [X] ~~Terminer un essai~~
     - [X] ~~Implémenter un système de score~~
-    - [] Pouvoir démarrer une partie
     - [X] ~~Arrêter une partie~~
+
+- [] Pouvoir démarrer une partie
 
 - [X] ~~Terminer les fichiers statiques~~
     - [X] ~~Ajouter une page d'accueil~~
     - [X] ~~Ajouter une page de félicitation~~
+
+- [] Front
+    - [] Style page d'accueil
+    - [] Style page de félicitations
+    - [] Style du jeu
+    - [] Animations
 
 - [ ] Mode multijoueur
     - [ ] Ajouter un modèle User
