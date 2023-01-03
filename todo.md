@@ -8,7 +8,9 @@
     - [X] ~~Sélectionner une citation aléatoirement~~
     - [X] ~~Sélectionner des noms de films aléatoirement~~
     - [X] ~~Terminer un essai~~
-    - [ ] Implémenter un système de score
+    - [X] ~~Implémenter un système de score~~
+    - [] Pouvoir démarrer une partie
+    - [] Arrêter une partie
 
 - [ ] Terminer les fichiers statiques
     - [ ] Ajouter une page d'accueil
