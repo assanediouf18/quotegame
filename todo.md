@@ -18,6 +18,7 @@
     - [X] ~~Ajouter une page de félicitation~~
 
 - [] Front
+    - [] Ajouter bootstrap
     - [] Style page d'accueil
     - [] Style page de félicitations
     - [] Style du jeu
