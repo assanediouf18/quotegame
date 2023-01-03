@@ -9,8 +9,13 @@
         <main>
             <h1>T'as la ref ?</h1>
             <h2>C'est fini...</h2>
-            <p>Bravo ! Ton score final est de 0 points !</p>
-            <a href="game.html">Rejouer</a>
+            <p>Bravo ! Ton score final est de <span id="scoreSpan"></span> points !</p>
+            <a href="game.html" onclick="sessionStorage.clear()">Rejouer</a>
         </main>
+
+        <script>
+            score = sessionStorage.getItem("score")
+            document.querySelector("#scoreSpan").innerHTML = score
+        </script>
     </body>
 </html>
