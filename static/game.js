@@ -30,6 +30,7 @@ function setNewProposition(goodMovie) {
             for(movie in movies) {
                 li = document.createElement("li")
                 li.textContent = movies[movie]
+                li.className = "btn btn-dark"
                 const index = movie
                 li.addEventListener("click", (event) => {
                     onProposalClick(movies[index])

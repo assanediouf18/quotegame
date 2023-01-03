@@ -23,11 +23,14 @@ main {
 
 blockquote {
     white-space: pre-line;
+    /* text-align: justify; */
+    margin: 0px 50px;
 }
 
 ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     list-style: none;
+}
+
+li  {
+    cursor: pointer;
 }
