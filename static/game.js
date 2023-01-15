@@ -15,8 +15,8 @@ function onProposalClick(proposal) {
             message = (data.correct) ? "Bravo ! Ton score passe à " : "Et non c'était '" + data.answer + "', ton score reste à "
             message += score + " (il reste " + (10 - quoteNb).toString() + " tour(s))"
             document.querySelector("#random_quote").innerHTML = message
-            goToNextMessage = "<li onclick=\"getNewQuote()\">Suivant</li>"
-            endMessage = "<a href=\"end.html\">Fin</a>"
+            goToNextMessage = "<li onclick=\"getNewQuote()\" class=\"gamebtn\">Suivant</li>"
+            endMessage = "<a href=\"end.html\" class=\"gamebtn\">Fin</a>"
             document.querySelector("#proposals").innerHTML = (quoteNb == 10) ? endMessage : goToNextMessage
         })
 }
@@ -30,7 +30,7 @@ function setNewProposition(goodMovie) {
             for(movie in movies) {
                 li = document.createElement("li")
                 li.textContent = movies[movie]
-                li.className = "btn btn-dark"
+                li.className = "gamebtn"
                 const index = movie
                 li.addEventListener("click", (event) => {
                     onProposalClick(movies[index])
@@ -45,8 +45,8 @@ function getNewQuote() {
     fetch('/random')
         .then((response) => response.json())
         .then((data) => {
-            document.querySelector('#random_quote').textContent = ""
-            typeWriter(data.quote, "random_quote")
+            document.querySelector('#random_quote').textContent = data.quote
+            // typeWriter(data.quote, "random_quote")
             storeItem("quote", data.id)
             setNewProposition(data.movie)
             document.querySelector("#proposals").innerHTML = ""

@@ -1,14 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Sofia+Sans&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
 }
 
+:root {
+    --accent-color: #ff0f7b;
+    --bg-color: #000123;
+}
+
 body {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    background-color: var(--bg-color);
+}
+
+main {
     height: 100vh;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: space-around; */
+    align-content: center;
+}
+
+.title {
+    font-size: 4em;
+}
+
+.gamebtn {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Sofia Sans', sans-serif;
+    background-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.gamebtn:hover {
+    transform: scale(1.1);
+}
+
+h1, h2 {
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+h1 {
+    color: white;
 }
 
 main {
@@ -25,6 +63,7 @@ blockquote {
     white-space: pre-line;
     /* text-align: justify; */
     margin: 0px 50px;
+    font-size: 1.1em;
 }
 
 ul {
