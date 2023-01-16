@@ -13,7 +13,7 @@ function onProposalClick(proposal) {
             quoteNb = parseInt(data.quoteNb)
             storeItem("quoteNb", quoteNb)
             message = (data.correct) ? "Bravo ! Ton score passe à " : "Et non c'était '" + data.answer + "', ton score reste à "
-            message += score + " (il reste " + (10 - quoteNb).toString() + " tour(s))"
+            message += "<span class=\"accent\">" + score + "</span> (il reste " + (10 - quoteNb).toString() + " tour(s))"
             document.querySelector("#random_quote").innerHTML = message
             goToNextMessage = "<li onclick=\"getNewQuote()\" class=\"gamebtn\">Suivant</li>"
             endMessage = "<a href=\"end.html\" class=\"gamebtn\">Fin</a>"

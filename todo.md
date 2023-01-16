@@ -11,17 +11,17 @@
     - [X] ~~Implémenter un système de score~~
     - [X] ~~Arrêter une partie~~
 
-- [] Pouvoir démarrer une partie
+- [X] ~~Pouvoir démarrer une partie~~
 
 - [X] ~~Terminer les fichiers statiques~~
     - [X] ~~Ajouter une page d'accueil~~
     - [X] ~~Ajouter une page de félicitation~~
 
-- [] Front
-    - [] Ajouter bootstrap
+- [X] Front
+    - [X]~~Ajouter bootstrap~~
     - [] Style page d'accueil
-    - [] Style page de félicitations
-    - [] Style du jeu
+    - [X]~~Style page de félicitations~~
+    - [X]~~Style du jeu~~
     - [] Animations
 
 - [ ] Mode multijoueur

@@ -25,11 +25,12 @@ main {
 }
 
 .title {
-    font-size: 4em;
+    font-size: 5em;
 }
 
 .gamebtn {
     padding: 5px 10px;
+    margin: 4px;
     border-radius: 10px;
     color: white;
     font-family: 'Sofia Sans', sans-serif;
@@ -39,6 +40,10 @@ main {
 
 .gamebtn:hover {
     transform: scale(1.1);
+}
+
+.accent {
+    color: var(--accent-color);
 }
 
 h1, h2 {
