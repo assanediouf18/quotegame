@@ -7,11 +7,14 @@
 
 :root {
     --accent-color: #ff0f7b;
+    /* --bg-color: #fff;
+    --text-color: black; */
     --bg-color: #000123;
+    --text-color: white;
 }
 
 body {
-    color: white;
+    color: var(--text-color);
     font-family: 'Playfair Display', serif;
     background-color: var(--bg-color);
 }
@@ -48,10 +51,6 @@ main {
 
 h1, h2 {
     font-family: 'Sofia Sans', sans-serif;
-}
-
-h1 {
-    color: white;
 }
 
 main {
