@@ -24,7 +24,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 .title {
@@ -55,12 +55,10 @@ h1, h2 {
 
 main {
     height: 100vh;
-    /* padding: 10%; */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-content: space-around; */
 }
 
 blockquote {
@@ -76,4 +74,16 @@ ul {
 
 li  {
     cursor: pointer;
+}
+
+@media (max-width: 800px){
+    .gamebtn {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 400px){
+    main {
+        text-align: center;
+    }
 }
