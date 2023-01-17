@@ -31,9 +31,20 @@ main {
     font-size: 5em;
 }
 
+.gameInfos {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    text-align: justify;
+}
+
+#scoreAnchor, #timeAnchor {
+    color: var(--accent-color);
+}
+
 .gamebtn {
     padding: 5px 10px;
-    margin: 4px;
+    margin: 4px 12px;
     border-radius: 10px;
     color: white;
     font-family: 'Sofia Sans', sans-serif;
@@ -43,6 +54,13 @@ main {
 
 .gamebtn:hover {
     transform: scale(1.1);
+    box-shadow: 4px 4px #321123;
+}
+
+.gamebtn:active {
+    transform: scale(0.8);
+    background-color: #321123;
+    box-shadow: none;
 }
 
 .accent {
@@ -63,10 +81,24 @@ main {
 
 blockquote {
     white-space: pre-line;
-    /* text-align: justify; */
     margin: 0px 50px;
     font-size: 1.1em;
+    /* background-color: transparent; */
 }
+
+/* blockquote::before {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    content: "";
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    width: 500px;
+    height: 500px;
+    background-image: url("/static/assets/quote.png");
+    z-index: -1;
+    transform: scale(0.2);
+} */
 
 ul {
     list-style: none;

@@ -10,10 +10,14 @@ function onProposalClick(proposal) {
         .then((data) => {
             score = data.newScore
             storeItem("score", score)
+            document.querySelector("#scoreAnchor").textContent = score
+
             quoteNb = parseInt(data.quoteNb)
             storeItem("quoteNb", quoteNb)
+            document.querySelector("#timeAnchor").textContent = (10 - quoteNb).toString()
+            
             message = (data.correct) ? "Bravo ! Ton score passe à " : "Et non c'était '" + data.answer + "', ton score reste à "
-            message += "<span class=\"accent\">" + score + "</span> (il reste " + (10 - quoteNb).toString() + " tour(s))"
+            message += "<span class=\"accent\">" + score + "</span>"
             document.querySelector("#random_quote").innerHTML = message
             goToNextMessage = "<li onclick=\"getNewQuote()\" class=\"gamebtn\">Suivant</li>"
             endMessage = "<a href=\"end.html\" class=\"gamebtn\">Fin</a>"
@@ -71,3 +75,5 @@ function typeWriter(txt, id, i = 0) {
 getNewQuote()
 storeItem("score", 0)
 storeItem("quoteNb", 0)
+document.querySelector("#scoreAnchor").textContent = "0"
+document.querySelector("#timeAnchor").textContent = "10"
