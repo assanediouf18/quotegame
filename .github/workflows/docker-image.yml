@@ -17,6 +17,6 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag quotegame
+        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/quotegame:master
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
         docker push ${{ secrets.DOCKER_USERNAME }}/quotegame:master
