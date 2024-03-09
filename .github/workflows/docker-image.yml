@@ -14,5 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login --username "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag quotegame:$(date +%s)
+      run: |
+        docker build . --file Dockerfile --tag quotegame
+        docker push ${{ secrets.DOCKER_USERNAME }}/quotegame:$(date +%s)
