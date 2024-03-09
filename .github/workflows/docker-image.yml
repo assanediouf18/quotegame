@@ -20,5 +20,5 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag quotegame:$(date +%s)
-        docker push docker.io/library/quotegame:$(date +%s)
+        docker build . --file Dockerfile --tag quotegame:latest
+        docker push quotegame:latest
