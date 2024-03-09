@@ -20,5 +20,5 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag quotegame
-        docker push ${{ secrets.DOCKER_USERNAME }}/quotegame:$(date +%s)
+        docker build . --file Dockerfile --tag quotegame:$(date +%s)
+        docker push quotegame:$(date +%s)
